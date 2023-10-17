@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import classes from "./UserInput.module.css";
 
 const intialUserinput = {
   "current-savings": 10000,
@@ -21,12 +22,12 @@ const UserInput = (props) => {
 
   const inputChangeHandler = (input, value) => {
     setUserInput((prevState) => {
-      return { ...prevState, [input]: value };
+      return { ...prevState, [input]: +value };
     });
   };
 
   return (
-    <form onSubmit={submitHandler} className='form'>
+    <form onSubmit={submitHandler} className={classes.form}>
       <div className='input-group'>
         <p>
           <label htmlFor='current-savings'>Current Savings ($)</label>

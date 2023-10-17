@@ -37,7 +37,17 @@ function App() {
 
       <UserInput onCalculate={calculateHandler} />
 
-      {!userInput && <p>Enter your data to see results!</p>}
+      {!userInput && (
+        <p
+          style={{
+            color: "red",
+            fontWeight: "bold",
+            textAlign: "center",
+          }}
+        >
+          Enter your data to see results!
+        </p>
+      )}
       {userInput && (
         <ResultsTable
           data={yearlyData}
